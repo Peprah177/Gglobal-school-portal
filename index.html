@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global School - Recruitment & Admissions Portal</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Global School - Recruitment & Application Portal</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -14,9 +14,9 @@
                         brand: {
                             50: '#f0f7ff',
                             100: '#e0effe',
-                            500: '#2563eb',
-                            600: '#1d4ed8',
-                            900: '#0f172a'
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            900: '#0c4a6e'
                         }
                     }
                 }
@@ -25,165 +25,171 @@
     </script>
     <!-- FontAwesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+<body class="bg-[#fafafa] text-slate-900 antialiased min-h-screen flex flex-col">
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <!-- TOP HEADER -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('recruitment')">
-                <div class="w-9 h-9 bg-brand-600 text-white rounded-xl flex items-center justify-center font-black text-lg shadow-md shadow-brand-500/20">
+                <div class="w-10 h-10 bg-slate-900 text-white rounded-xl flex items-center justify-center font-extrabold text-xl shadow-sm">
                     G
                 </div>
-                <span class="font-bold text-lg text-slate-900 tracking-tight">Global School <span class="text-xs font-semibold px-2 py-0.5 bg-blue-50 text-brand-600 rounded-full border border-blue-200 ml-1">Portal</span></span>
+                <div>
+                    <h1 class="font-extrabold text-base leading-none text-slate-900">GLOBAL SCHOOL</h1>
+                    <span class="text-[10px] font-bold text-brand-600 uppercase tracking-widest">Recruitment Portal</span>
+                </div>
             </div>
 
-            <nav class="flex items-center space-x-4">
-                <button onclick="switchTab('recruitment')" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition">Job Openings</button>
-                <button onclick="switchTab('admin')" class="text-sm font-semibold bg-slate-900 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition flex items-center space-x-2">
-                    <i class="fa-solid fa-user-gear text-xs"></i>
-                    <span>Admin Dashboard</span>
+            <nav class="flex items-center space-x-3">
+                <button onclick="switchTab('recruitment')" class="text-xs font-bold px-3 py-2 text-slate-600 hover:text-slate-900 transition">Job Board</button>
+                <button onclick="switchTab('admin')" class="text-xs font-bold bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-xl transition shadow-sm flex items-center space-x-2">
+                    <i class="fa-solid fa-lock text-[10px]"></i>
+                    <span>Admin Panel</span>
                 </button>
             </nav>
         </div>
     </header>
 
-    <!-- MAIN CONTENT CONTAINER -->
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full">
+    <!-- MAIN BODY -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full">
 
-        <!-- VIEW 1: RECRUITMENT & APPLICATION LISTINGS -->
-        <div id="view-recruitment" class="block space-y-10">
-            <!-- Hero Header -->
-            <div class="text-center max-w-2xl mx-auto space-y-4">
-                <span class="text-xs font-extrabold uppercase tracking-widest text-brand-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">2026 Recruitment & Admissions</span>
-                <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Join the Global School Team & Campus</h1>
-                <p class="text-slate-600 text-base leading-relaxed">Explore active career opportunities and academic admissions. Submit your profile directly to our review panel.</p>
+        <!-- RECRUITMENT VIEW -->
+        <div id="view-recruitment" class="block space-y-8">
+            
+            <!-- Hero Banner -->
+            <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 md:p-12 text-white shadow-xl relative overflow-hidden">
+                <div class="max-w-2xl space-y-4 relative z-10">
+                    <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-brand-500 bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">
+                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                        2026 Admissions & Hiring Open
+                    </span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">Apply for Admissions & Academic Roles</h2>
+                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">Join Global School's faculty or register for upcoming tertiary academic cycles.</p>
+                </div>
             </div>
 
-            <!-- Job / Admission Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Main Layout Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
                 
-                <!-- Position 1 -->
-                <div class="bg-white border border-slate-200 hover:border-brand-500 rounded-2xl p-6 shadow-sm hover:shadow-md transition group flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-start">
-                            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md">Full-time Staff</span>
-                            <span class="text-xs text-slate-400">Posted Sept 2026</span>
+                <!-- Sidebar Filters -->
+                <aside class="space-y-6">
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm space-y-4">
+                        <h3 class="font-bold text-xs uppercase tracking-wider text-slate-400">Filter Listings</h3>
+                        <div class="space-y-2">
+                            <button onclick="filterCategory('all')" class="w-full text-left px-3 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-900">All Positions</button>
+                            <button onclick="filterCategory('academic')" class="w-full text-left px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:bg-slate-50">Academic Admissions</button>
+                            <button onclick="filterCategory('faculty')" class="w-full text-left px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:bg-slate-50">Teaching Staff</button>
+                            <button onclick="filterCategory('stem')" class="w-full text-left px-3 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:bg-slate-50">STEM & Technology</button>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-600 transition">Senior Physics & STEM Instructor</h3>
-                        <p class="text-sm text-slate-600">Lead secondary level electrical physics and practical STEM laboratory courses. Requires teaching certification.</p>
                     </div>
-                    <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
-                        <span class="text-xs font-medium text-slate-500"><i class="fa-solid fa-location-dot mr-1 text-slate-400"></i> Main Campus</span>
-                        <button onclick="openApplyModal('Senior Physics & STEM Instructor')" class="bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition">Apply Now</button>
-                    </div>
-                </div>
+                </aside>
 
-                <!-- Position 2 -->
-                <div class="bg-white border border-slate-200 hover:border-brand-500 rounded-2xl p-6 shadow-sm hover:shadow-md transition group flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-start">
-                            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md">Academic Intake</span>
-                            <span class="text-xs text-slate-400">2026 / 2027 Term</span>
+                <!-- Listings Section -->
+                <div class="lg:col-span-3 space-y-4">
+                    
+                    <!-- Card 1 -->
+                    <div class="job-card bg-white border border-slate-200/80 hover:border-brand-500 rounded-2xl p-6 shadow-sm hover:shadow-md transition group" data-category="faculty stem">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="bg-sky-50 text-sky-700 text-[10px] font-bold uppercase px-2.5 py-1 rounded-md border border-sky-100">Teaching Staff</span>
+                                    <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot mr-1"></i> Main Campus</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition">Senior Physics & Circuit Instructor</h3>
+                                <p class="text-xs text-slate-500 line-clamp-2">Instructor position responsible for physics, electrical resistance theory, and laboratory practicals.</p>
+                            </div>
+                            <button onclick="openApplyModal('Senior Physics Instructor')" class="shrink-0 bg-slate-900 hover:bg-brand-600 text-white text-xs font-bold px-5 py-3 rounded-xl transition shadow-sm">
+                                Apply Now <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </button>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-600 transition">Level 100 General Student Admission</h3>
-                        <p class="text-sm text-slate-600">Apply for undergraduate student enrollment across Science, Technology, and Business tracks.</p>
                     </div>
-                    <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
-                        <span class="text-xs font-medium text-slate-500"><i class="fa-solid fa-graduation-cap mr-1 text-slate-400"></i> Academic Program</span>
-                        <button onclick="openApplyModal('Level 100 General Student Admission')" class="bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition">Apply Now</button>
-                    </div>
-                </div>
 
+                    <!-- Card 2 -->
+                    <div class="job-card bg-white border border-slate-200/80 hover:border-brand-500 rounded-2xl p-6 shadow-sm hover:shadow-md transition group" data-category="academic">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="bg-emerald-50 text-emerald-700 text-[10px] font-bold uppercase px-2.5 py-1 rounded-md border border-emerald-100">Admissions</span>
+                                    <span class="text-xs text-slate-400"><i class="fa-solid fa-graduation-cap mr-1"></i> Undergraduate</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition">Level 100 Student Admissions (2026/2027)</h3>
+                                <p class="text-xs text-slate-500 line-clamp-2">Submit your high school transcripts and certificates for direct entry intake.</p>
+                            </div>
+                            <button onclick="openApplyModal('Level 100 Student Admission')" class="shrink-0 bg-slate-900 hover:bg-brand-600 text-white text-xs font-bold px-5 py-3 rounded-xl transition shadow-sm">
+                                Apply Now <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
 
-        <!-- VIEW 2: ADMIN DASHBOARD VIEW -->
+        <!-- ADMIN VIEW -->
         <div id="view-admin" class="hidden space-y-6">
             <div class="flex justify-between items-center pb-4 border-b border-slate-200">
                 <div>
-                    <h2 class="text-2xl font-bold text-slate-900">Applicant Submissions</h2>
-                    <p class="text-xs text-slate-500">Review incoming candidate files and documents in real-time.</p>
+                    <h2 class="text-xl font-bold text-slate-900">Submitted Applications</h2>
+                    <p class="text-xs text-slate-500">Live candidate dashboard</p>
                 </div>
-                <span class="text-xs font-semibold bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full border border-emerald-200">Live System Online</span>
             </div>
 
-            <!-- Applicants Table -->
             <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left text-sm">
-                        <thead class="bg-slate-50 text-slate-500 text-xs uppercase font-bold border-b border-slate-200">
-                            <tr>
-                                <th class="p-4">Applicant Name</th>
-                                <th class="p-4">Target Position / Course</th>
-                                <th class="p-4">Contact Email</th>
-                                <th class="p-4">Status</th>
-                                <th class="p-4 text-right">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody id="applicant-rows" class="divide-y divide-slate-100 text-slate-700 font-medium">
-                            <tr>
-                                <td class="p-4 font-bold text-slate-900">Emmanuel Peprah</td>
-                                <td class="p-4">Level 100 General Student Admission</td>
-                                <td class="p-4">emmanuel@example.com</td>
-                                <td class="p-4"><span class="bg-amber-50 text-amber-700 text-xs px-2.5 py-1 rounded-full font-bold">Under Review</span></td>
-                                <td class="p-4 text-right"><button class="text-brand-600 hover:underline text-xs font-bold">View Profile</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <table class="w-full text-left text-xs">
+                    <thead class="bg-slate-50 text-slate-500 uppercase font-bold border-b border-slate-200">
+                        <tr>
+                            <th class="p-4">Applicant</th>
+                            <th class="p-4">Program / Role</th>
+                            <th class="p-4">Email</th>
+                            <th class="p-4">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="applicant-rows" class="divide-y divide-slate-100 font-medium">
+                        <tr>
+                            <td class="p-4 font-bold text-slate-900">Emmanuel Peprah</td>
+                            <td class="p-4">Level 100 Student Admission</td>
+                            <td class="p-4">emmanuel@example.com</td>
+                            <td class="p-4"><span class="bg-amber-50 text-amber-700 text-[10px] px-2.5 py-1 rounded-full font-bold">In Review</span></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
     </main>
 
-    <!-- APPLICATION MODAL FORM -->
+    <!-- MODAL -->
     <div id="apply-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden border border-slate-100 animate-in fade-in zoom-in duration-200">
-            <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+        <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl p-6 border border-slate-100">
+            <div class="flex justify-between items-center pb-4 border-b border-slate-100 mb-4">
                 <div>
-                    <h3 class="font-bold text-lg text-slate-900">Application Form</h3>
-                    <p id="modal-title" class="text-xs text-brand-600 font-medium"></p>
+                    <h3 class="font-bold text-base text-slate-900">Application Form</h3>
+                    <p id="modal-title" class="text-xs text-brand-600 font-semibold"></p>
                 </div>
-                <button onclick="closeApplyModal()" class="text-slate-400 hover:text-slate-600 text-lg p-1"><i class="fa-solid fa-xmark"></i></button>
+                <button onclick="closeApplyModal()" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
 
-            <form onsubmit="submitApplication(event)" class="p-6 space-y-4">
+            <form onsubmit="submitApplication(event)" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Full Name</label>
-                    <input type="text" id="app-name" required placeholder="e.g. Emmanuel Peprah" class="w-full p-3 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-brand-600">
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Full Name</label>
+                    <input type="text" id="app-name" required placeholder="Emmanuel Peprah" class="w-full p-3 border border-slate-200 rounded-xl text-xs focus:outline-none focus:border-brand-600">
                 </div>
-
                 <div>
-                    <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Email Address</label>
-                    <input type="email" id="app-email" required placeholder="name@example.com" class="w-full p-3 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-brand-600">
+                    <label class="block text-[10px] font-bold uppercase text-slate-500 mb-1">Email Address</label>
+                    <input type="email" id="app-email" required placeholder="name@domain.com" class="w-full p-3 border border-slate-200 rounded-xl text-xs focus:outline-none focus:border-brand-600">
                 </div>
-
-                <div>
-                    <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Upload Resume / Transcript (PDF)</label>
-                    <input type="file" id="app-file" accept=".pdf,.doc,.docx" required class="w-full p-2 border border-slate-200 rounded-xl text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-brand-50 file:text-brand-600 hover:file:bg-brand-100">
-                </div>
-
-                <div class="pt-4 flex gap-3">
-                    <button type="button" onclick="closeApplyModal()" class="w-1/2 py-3 rounded-xl border border-slate-200 text-slate-600 font-semibold text-sm hover:bg-slate-50">Cancel</button>
-                    <button type="submit" class="w-1/2 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md shadow-brand-500/20">Submit Profile</button>
-                </div>
+                <button type="submit" class="w-full py-3 bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs rounded-xl transition shadow-md">Submit Application</button>
             </form>
         </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500">
-        <p>© 2026 Global School. All rights reserved. Powered by Vercel.</p>
-    </footer>
-
-    <!-- INTERACTIVE SCRIPT -->
+    <!-- SCRIPT -->
     <script>
-        let currentRole = 'recruitment';
         let selectedPosition = '';
 
         function switchTab(tab) {
@@ -192,9 +198,9 @@
             document.getElementById('view-' + tab).classList.remove('hidden');
         }
 
-        function openApplyModal(position) {
-            selectedPosition = position;
-            document.getElementById('modal-title').innerText = position;
+        function openApplyModal(pos) {
+            selectedPosition = pos;
+            document.getElementById('modal-title').innerText = pos;
             document.getElementById('apply-modal').classList.remove('hidden');
         }
 
@@ -207,20 +213,17 @@
             const name = document.getElementById('app-name').value;
             const email = document.getElementById('app-email').value;
 
-            // Add row dynamically to Admin table
             const tbody = document.getElementById('applicant-rows');
-            const newRow = `
+            tbody.innerHTML = `
                 <tr>
                     <td class="p-4 font-bold text-slate-900">${name}</td>
                     <td class="p-4">${selectedPosition}</td>
                     <td class="p-4">${email}</td>
-                    <td class="p-4"><span class="bg-blue-50 text-brand-600 text-xs px-2.5 py-1 rounded-full font-bold">New Submission</span></td>
-                    <td class="p-4 text-right"><button class="text-brand-600 hover:underline text-xs font-bold">View Profile</button></td>
+                    <td class="p-4"><span class="bg-blue-50 text-brand-600 text-[10px] px-2.5 py-1 rounded-full font-bold">New</span></td>
                 </tr>
-            `;
-            tbody.innerHTML = newRow + tbody.innerHTML;
+            ` + tbody.innerHTML;
 
-            alert('Application submitted successfully for ' + name + '!');
+            alert('Application submitted for ' + name);
             closeApplyModal();
             switchTab('admin');
         }
